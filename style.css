@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(0,255,255,0.2);
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+    font-size:2.5rem;
+    text-shadow:0 0 15px cyan;
+}
+
+.scoreboard{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    gap:10px;
+}
+
+.score{
+    flex:1;
+    padding:15px;
+    border-radius:15px;
+    color:white;
+    font-size:1.2rem;
+    font-weight:bold;
+    background:rgba(255,255,255,0.08);
+    box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+
+.playerX{
+    border:2px solid #00e5ff;
+}
+
+.playerO{
+    border:2px solid #ff4d6d;
+}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:10px;
+}
+
+.cell{
+    width:100%;
+    aspect-ratio:1/1;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    user-select:none;
+}
+
+.cell:hover{
+    transform:scale(1.05);
+    background:rgba(255,255,255,0.15);
+}
+
+.x{
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+.o{
+    color:#ff4d6d;
+    text-shadow:0 0 20px #ff4d6d;
+}
+
+.message{
+    margin-top:20px;
+    color:white;
+    font-size:1.2rem;
+    min-height:30px;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00e5ff,#ff4d6d);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.winner{
+    animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px #fff;
+    }
+    to{
+        box-shadow:0 0 25px cyan;
+    }
+}
